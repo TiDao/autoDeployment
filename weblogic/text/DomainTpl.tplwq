@@ -1,0 +1,35 @@
+`
+read template from "{{.Env.WlsHome}}/wlserver/common/templates/wls/wls.jar";
+
+set JavaHome "{{.Env.JavaHome}}"; 
+set ServerStartMode "{{.Domain.ServerMode}}"; 
+
+find Server "AdminServer" as AdminServer;
+set AdminServer.ListenAddress "{{.Domain.AdminAddr}}";
+set AdminServer.ListenPort "{{.Domain.AdminPort}}";
+set AdminServer.SSL.Enabled "{{.Domain.IsSSl}}";
+set AdminServer.SSL.ListenPort "{{.Domain.AdminPort}}";
+
+//We can directly create a new managed server.
+//create Server "base" as BASE;
+//set BASE.ListenAddress "";
+//set BASE.ListenPort "8003";
+//set BASE.SSL.Enabled "true";
+//set BASE.SSL.ListenPort "8004″;
+
+//Create Machine
+//create Machine "base" as Machinename;
+
+//use templates default weblogic user
+//find User "{{.Doamin.AdminName}}" as u1;
+//set u1.password "{{.Domain.AdminPassword}}";
+
+//create a new user
+create User "{{.Domain.AdminName}}" as u2;
+set u2.password "{{.Domain.AdminPassword}}";
+
+write domain to "{{.Domain.Path}}"; 
+
+
+close template;
+`
