@@ -28,7 +28,7 @@ func Run(command string) []string {
 	if startErr != nil {
 		log.Fatal(err)
 	}
-	outputBuf := bufio.NewReafer(stdout)
+	outputBuf := bufio.NewReader(stdout)
 	var result []string
 	for {
 		output, err := outputBuf.ReadString('\n')
