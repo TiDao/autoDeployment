@@ -14,35 +14,33 @@ type Data struct {
 
 //all string of path must be write full path
 type Env struct {
-    JavaHome  string `json:"JavaHome"`
-    UserGroup string `json:"UserGrop"`
-    UserName  string `json:"UserName"`
-    Password  string `json:"Password"`
-    JreHome   string `json:"JreHome"`
-    ClassPath string `json:"ClassPath"`
-	Path      string `json:"Path"`     //the path which find executed file
-    EnvFile   string `json:"EnvFile"`
-    WlsHome   string `json:"WlsHome"`
+	JavaHome  string `json:"JavaHome"`
+	UserName  string `json:"UserName"`
+	Password  string `json:"Password"`
+	JreHome   string `json:"JreHome"`
+	ClassPath string `json:"ClassPath"`
+	Path      string `json:"Path"` //the path which find executed file
+	EnvFile   string `json:"EnvFile"`
+	WlsHome   string `json:"WlsHome"`
 }
 
 type Install struct {
-    PackagePath string
-    InstallTpl string
-    InstallRsp    string
-    Locfile  string
-    OracleHome string
+	PackagePath string
+	InstallTpl  string
+	InstallRsp  string
+	Locfile     string
+	OracleHome  string
 }
 
-
-type Domain struct{
-    Tpl string
-    Rsp string
-    Path string
-    ServerMode string
-    AdminAddr string
-    AdminName string
-    AdminPassword string
-    HttpPort string
-    IsSSL        string
-    SSLPort  string
+type Domain struct {
+	Tpl           string
+	Rsp           string
+	Path          string
+	ServerMode    string
+	AdminAddr     string
+	AdminName     string
+	AdminPassword string
+	HttpPort      string
+	IsSSL         string
+	SSLPort       string
 }
